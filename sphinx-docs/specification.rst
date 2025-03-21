@@ -505,7 +505,7 @@ command-line arguments.
 
 Input *parameters* key contains a mapping just like command *args* where
 each key is the parameter id and value is an object describing the
-parameter. The ids of the parameters should match those of the
+parameter. The ids of the parameters are used to match them with ids of
 command line arguments defined in the previous section. The values
 passed to the parameters by the user will be validated and passed to their
 corresponding arguments. Not every argument has to have a corresponding
@@ -532,7 +532,7 @@ an object defining the parameter having the following attributes
   The type of the parameter determines validation functions used on
   the value and additional constraints that may be imposed.
   Built-in types include ``integer``, ``decimal``, ``text``,
-  ``flag``, ``choice`` and ``file``; however, a path to the custom
+  ``flag`` (or ``boolean``), ``choice`` and ``file``; however, a path to the custom
   implementation of the type can be used as well (defining custom types
   will be covered in the advanced usage tutorial).
   Type name can be immediately followed by a pair of square brackets
@@ -593,6 +593,7 @@ Text type
 
 :*max-length*:
   Integer. Maximum length of the text.
+
 
 Choice type
 ===========
